@@ -5,7 +5,7 @@ function App(){
 
     return(
         <div>
-            <h1>algo vis</h1>
+            <h3 className='title'>Sorting Algorithm Visualizer</h3>
             <SortingVisualizer />
         </div>
     )

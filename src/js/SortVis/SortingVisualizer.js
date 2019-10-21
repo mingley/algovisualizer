@@ -76,7 +76,8 @@ class SortingVisualizer extends React.Component{
     }
 
     quickSort(){
-       quickSortFunction(this.state.array, 0, this.state.array.length-1);
+      let animations = quickSortFunction(this.state.array, 0, this.state.array.length-1);
+      console.log(animations);
     }
 
     heapSort(){
@@ -110,12 +111,14 @@ class SortingVisualizer extends React.Component{
             style={{height: `${value}px`}}>
             </div>
          })}
+         </div>
+         <div className='buttons'>
          <button onClick={()=>this.resetArray()}>Generate Random Array</button>
          <button onClick={()=>this.mergeSort()}>mergeSort</button>
          <button onClick={()=>this.bubbleSort()}>bubbleSort</button>
-         <button onClick={()=>this.quickSort()}>quickSort</button>
-         <button onClick={()=>this.heapSort()}>heapSort</button>
-         <button onClick={()=>this.testSortingAlgorithms()}>test</button>
+         {/* <button onClick={()=>this.quickSort()}>quickSort</button> */}
+         {/* <button onClick={()=>this.heapSort()}>heapSort</button> */}
+         {/* <button onClick={()=>this.testSortingAlgorithms()}>test</button> */}
         </div>
         </>
     )
