@@ -1,6 +1,8 @@
 import React from 'react';
 import {getMergeSortAnimations, getBubbleSortAnimations, quickSortFunction} from '../sortingAlgos/sortingAlgos';
 require("regenerator-runtime/runtime");
+import Button from 'react-bootstrap/Button'
+import Jumbotron from 'react-bootstrap/Jumbotron';
 
 function randomIntFromInterval(min, max) { // min and max included 
     return Math.floor(Math.random() * (max - min + 1) + min);
@@ -104,22 +106,23 @@ class SortingVisualizer extends React.Component{
     return(
         <>
         <div className='array-container'>
-         {array.map((value, index)=>{      
+          <Jumbotron>
+            <h3>Sorting Algorithm Visualizer</h3>
+            {array.map((value, index)=>{      
             return <div 
             className='array-bar' 
             key={index}
             style={{height: `${value}px`}}>
             </div>
-         })}
+            })}<br />
+            <Button variant="info" size="sm" onClick={()=>this.resetArray()}>Generate Random Array</Button>
+            <Button variant="info" size="sm" onClick={()=>this.mergeSort()}>mergeSort</Button>
+            <Button variant="info" size="sm" onClick={()=>this.bubbleSort()}>bubbleSort</Button>
+         </Jumbotron>
          </div>
-         <div className='buttons'>
-         <button onClick={()=>this.resetArray()}>Generate Random Array</button>
-         <button onClick={()=>this.mergeSort()}>mergeSort</button>
-         <button onClick={()=>this.bubbleSort()}>bubbleSort</button>
          {/* <button onClick={()=>this.quickSort()}>quickSort</button> */}
          {/* <button onClick={()=>this.heapSort()}>heapSort</button> */}
          {/* <button onClick={()=>this.testSortingAlgorithms()}>test</button> */}
-        </div>
         </>
     )
   }

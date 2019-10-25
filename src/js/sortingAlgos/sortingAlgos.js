@@ -102,12 +102,12 @@ export function getBubbleSortAnimations(arr){
           for (let i = 0; i < arr.length; i++) {
               for(let j=0;j<arr.length-i-1;j++){
                 if (arr[j] > arr[j + 1]) {
-                let index=arr.length-i-1;
+                let index=arr.length-i-j-1;
                 bubbleSortAnimations.push([j,j+1])
                 bubbleSortAnimations.push([j,j+1])
                 let tmp = arr[j];
                 arr[j] = arr[j + 1];
-                bubbleSortAnimations.push([index,tmp])
+                bubbleSortAnimations.push([j,tmp])
                 arr[j + 1] = tmp;
                 }
             }

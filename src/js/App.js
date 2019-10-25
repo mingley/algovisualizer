@@ -1,11 +1,12 @@
 import React from 'react';
 import SortingVisualizer from './SortVis/SortingVisualizer';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Jumbotron from 'react-bootstrap/Jumbotron';
 
 function App(){
 
     return(
         <div>
-            <h3 className='title'>Sorting Algorithm Visualizer</h3>
             <SortingVisualizer />
         </div>
     )
