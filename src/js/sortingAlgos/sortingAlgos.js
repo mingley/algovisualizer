@@ -102,7 +102,6 @@ export function getBubbleSortAnimations(arr){
           for (let i = 0; i < arr.length; i++) {
               for(let j=0;j<arr.length-i-1;j++){
                 if (arr[j] > arr[j + 1]) {
-                let index=arr.length-i-j-1;
                 bubbleSortAnimations.push([j,j+1])
                 bubbleSortAnimations.push([j,j+1])
                 let tmp = arr[j];
@@ -112,7 +111,6 @@ export function getBubbleSortAnimations(arr){
                 }
             }
           }
-          console.log(arr);
     return bubbleSortAnimations
 };
 
